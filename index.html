@@ -905,6 +905,32 @@
             box-shadow: 0 6px 16px rgba(6, 12, 26, 0.45);
         }
 
+        .creator-credit {
+            position: fixed;
+            right: 14px;
+            bottom: 12px;
+            z-index: 5;
+            padding: 6px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: rgba(255, 255, 255, 0.26);
+            color: rgba(23, 49, 80, 0.58);
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 7px rgba(17, 38, 73, 0.1);
+            backdrop-filter: blur(3px);
+            opacity: 0.72;
+            pointer-events: none;
+        }
+
+        body[data-theme="night"] .creator-credit {
+            color: rgba(238, 245, 255, 0.56);
+            border-color: rgba(191, 214, 255, 0.22);
+            background: rgba(23, 39, 69, 0.3);
+            box-shadow: 0 3px 10px rgba(6, 12, 26, 0.2);
+        }
+
         @media (max-width: 480px) {
             body {
                 padding-top: 24px;
@@ -917,6 +943,13 @@
                 min-width: 78px;
                 padding: 7px 10px;
                 font-size: 0.86rem;
+            }
+
+            .creator-credit {
+                right: 10px;
+                bottom: 10px;
+                font-size: 0.68rem;
+                padding: 5px 9px;
             }
 
             .container {
@@ -1008,6 +1041,7 @@
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="밤 모드 전환">🌙 밤</button>
+    <div class="creator-credit" aria-label="제작자">제작자: Mero</div>
     <div class="sky-layer" aria-hidden="true">
         <span class="cloud"></span>
         <span class="cloud"></span>
