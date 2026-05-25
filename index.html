@@ -2,8 +2,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>포켓몬 랜덤 뽑기</title>
-        <style>
+    <title>⚡ 포켓몬 랜덤 룰렛 ⚡</title>
+    
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;600;700;800&display=swap');
 
         :root {
@@ -1041,7 +1047,6 @@
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="밤 모드 전환">🌙 밤</button>
-    <div class="creator-credit" aria-label="제작자">제작자: Mero</div>
     <div class="sky-layer" aria-hidden="true">
         <span class="cloud"></span>
         <span class="cloud"></span>
@@ -1113,7 +1118,7 @@
             { key: 'gen7', label: '7세대', min: 722, max: 809 },
             { key: 'gen8', label: '8세대', min: 810, max: 905 },
             { key: 'gen9', label: '9세대', min: 906, max: 1025 },
-            { key: 'national', label: '전체', min: 1, max: 1025 }
+            { key: 'national', label: '전국도감', min: 1, max: 1025 }
         ];
         const encounterModes = [
             { key: 'all', label: '모두' },
@@ -1420,6 +1425,3 @@
     </script>
 </body>
 </html>
-
-
-
