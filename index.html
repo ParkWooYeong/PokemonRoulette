@@ -1286,7 +1286,6 @@
         const shinyToggleBtn = document.getElementById('shiny-toggle');
         const shinyStorageKey = 'roulette-shiny-mode';
         const historyStorageKey = 'roulette-history';
-        const historyLimit = 12;
         const historyList = document.getElementById('history-list');
         const historyCount = document.getElementById('history-count');
         const historyEmpty = document.getElementById('history-empty');
@@ -1569,9 +1568,6 @@
                 spinHistory = [];
             }
 
-            if (spinHistory.length > historyLimit) {
-                spinHistory = spinHistory.slice(-historyLimit);
-            }
             renderHistory(spinHistory);
         }
 
@@ -1594,9 +1590,6 @@
                     time: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })
                 };
                 spinHistory.push(entry);
-                if (spinHistory.length > historyLimit) {
-                    spinHistory.shift();
-                }
                 saveHistory();
                 renderHistory(spinHistory);
             } catch (error) {
