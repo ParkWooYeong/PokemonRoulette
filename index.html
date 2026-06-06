@@ -994,6 +994,29 @@
             font-weight: 800;
         }
 
+        .clear-history-btn {
+            margin-left: 10px;
+            padding: 6px 12px;
+            border: 0;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: #6f92bf;
+            cursor: pointer;
+            transition: transform 0.16s ease, filter 0.16s ease, opacity 0.16s ease;
+        }
+
+        .clear-history-btn:hover:not(:disabled) {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+
+        .clear-history-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
         .history-empty {
             margin: 0;
             color: #4c5f76;
@@ -1258,7 +1281,10 @@
         <section class="history-panel" aria-labelledby="history-title">
             <div class="history-header">
                 <h2 id="history-title">최근 획득</h2>
-                <span class="history-count">총 <strong id="history-count">0</strong>마리</span>
+                <div>
+                    <span class="history-count">총 <strong id="history-count">0</strong>마리</span>
+                    <button id="clear-history-btn" class="clear-history-btn" type="button" aria-label="최근 획득 기록 삭제" disabled>삭제</button>
+                </div>
             </div>
             <p class="history-empty" id="history-empty">아직 포켓몬을 잡지 않았어요.</p>
             <ul class="history-list" id="history-list" aria-live="polite"></ul>
@@ -1289,6 +1315,7 @@
         const historyList = document.getElementById('history-list');
         const historyCount = document.getElementById('history-count');
         const historyEmpty = document.getElementById('history-empty');
+        const clearHistoryBtn = document.getElementById('clear-history-btn');
         let spinHistory = [];
         const generationModes = [
             { key: 'gen1', label: '1세대', min: 1, max: 151 },
@@ -1519,6 +1546,7 @@
             historyList.innerHTML = '';
             const listItems = Array.isArray(entries) ? entries : [];
             historyCount.textContent = String(listItems.length);
+            clearHistoryBtn.disabled = listItems.length === 0;
 
             if (listItems.length === 0) {
                 historyEmpty.style.display = 'block';
@@ -1578,6 +1606,14 @@
                 console.warn('히스토리 저장 실패:', error);
             }
         }
+
+        function clearHistory() {
+            spinHistory = [];
+            saveHistory();
+            renderHistory(spinHistory);
+        }
+
+        clearHistoryBtn.addEventListener('click', clearHistory);
 
         function addHistoryEntry(name, id, types, shiny, sprite) {
             try {
