@@ -20,5 +20,4 @@
 | **Deploy** | Vercel (Web Analytics) |
 
 ---
-### 📸 프로젝트 스크린샷
 ![메인 화면](Poke.png)
