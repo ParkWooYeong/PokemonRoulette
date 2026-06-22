@@ -25,4 +25,4 @@
 ---
 
 ### 🔗 Live Demo
-> **[포켓몬 잡으러 가기](https://pokemon-roulette-coral.vercel.app/) ↗**
+>  바로 포켓몬 잡으러 가기! [Click Here](https://pokemon-roulette-coral.vercel.app/) 
