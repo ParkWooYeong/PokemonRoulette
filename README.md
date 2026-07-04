@@ -4,10 +4,9 @@
 
 ---
 
-## ✨ Key Highlights
 
-* ⚡ Random Encounter System: 세대, 타입, 조우 환경(풀숲/물) 필터를 통해 원하는 조건의 포켓몬을 랜덤하게 조우합니다.
-* 📊 Pokedex & History: 실시간으로 잡은 포켓몬 기록과 나만의 도감을 브라우저에 저장하여 관리합니다.
+* Random Encounter System: 세대, 타입, 조우 환경(풀숲/물) 필터를 통해 원하는 조건의 포켓몬을 랜덤하게 조우합니다.
+   Pokedex & History: 실시간으로 잡은 포켓몬 기록과 나만의 도감을 브라우저에 저장하여 관리합니다.
 
 ---
 
